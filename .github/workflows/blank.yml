@@ -12,9 +12,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Base
+        uses: lowlighter/metrics@latest
         with:
-          filename: metrics.base.1.svg
+          filename: metrics.base.svg
           token: ${{ secrets.METRICS_TOKEN }}
 
           # Options
@@ -24,16 +25,14 @@ jobs:
           config_timezone: Etc/GMT-8
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
+
+      - name: Most used
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.mostused.svg
+          token: ${{ secrets.METRICS_TOKEN }}
           
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.base.2.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-
-          # Options
-          user: IvanHanloth
-          template: classic
-          base: header, activity, community, repositories, metadata
-          config_timezone: Etc/GMT-8
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
+          plugin_languages: yes
+          plugin_languages_sections: most-used
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 4
