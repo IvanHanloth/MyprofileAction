@@ -17,7 +17,6 @@ jobs:
       - name: Base
         uses: lowlighter/metrics@latest
         with:
-          # output_action: none
           filename: metrics.base.svg
           token: ${{ secrets.METRICS_TOKEN }}
 
@@ -28,7 +27,6 @@ jobs:
       - name: Commit
         uses: lowlighter/metrics@latest
         with:
-          # output_action: none
           filename: metrics.commit.svg
           token: ${{ secrets.METRICS_TOKEN }}
 
@@ -43,7 +41,6 @@ jobs:
       - name: Most used
         uses: lowlighter/metrics@latest
         with:
-          # output_action: none
           filename: metrics.mostused.svg
           token: ${{ secrets.METRICS_TOKEN }}
           
