@@ -16,6 +16,7 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           output_action: none
+          working-directory: ./images
           filename: metrics.base.svg
           token: ${{ secrets.METRICS_TOKEN }}
 
