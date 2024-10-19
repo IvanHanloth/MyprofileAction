@@ -22,11 +22,13 @@ jobs:
           user: IvanHanloth
           template: classic
           base: header, activity, community, repositories, metadata
+          
       - name: Commit
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.commit.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          
           # Options
           user: IvanHanloth
           template: classic
