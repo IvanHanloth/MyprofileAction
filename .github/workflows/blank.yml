@@ -18,7 +18,7 @@ jobs:
           filename: metrics.base.svg
           token: ${{ secrets.METRICS_TOKEN }}
           output_action: gist
-          # committer_gist: ${{ secrets.GISTS_TOKEN }}
+          committer_gist: ${{ secrets.GISTS }}
 
           # Options
           user: IvanHanloth
